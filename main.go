@@ -6,7 +6,7 @@ import (
 	"e-commerce_api/database"
 	"e-commerce_api/controller"
 	"e-commerce_api/middleware"
-	//"os"
+	"os"
 	"fmt"
 )
 
@@ -57,6 +57,6 @@ func main(){
 	authorized.PUT("/market/category/:id", controller.UpdateCategory) // mengupdate category
 
 
-	router.Run(":8585")
+	router.Run(":"+os.Getenv("PORT"))
 
 }
